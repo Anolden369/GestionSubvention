@@ -213,8 +213,8 @@ public class SubventionsController implements Initializable
                 for (int annee : lesSubventions.get(ville).get(secteur).keySet()) {
                     noeudSecteur = new TreeItem(secteur);
                     for (Structure uneStructure : lesSubventions.get(ville).get(secteur).get(annee)) {
-                        int calcul = 0;
-                        noeudSecteur = new TreeItem(secteur.toString() + " : " + uneStructure.getMontant());
+                        int calcul = uneStructure.getMontant();
+                        noeudSecteur = new TreeItem(secteur.toString() + " : " + calcul);
                         noeudSecteur.setExpanded(true);
                         calcul += uneStructure.getMontant();
                     }
